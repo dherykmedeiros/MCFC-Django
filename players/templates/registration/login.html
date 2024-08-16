@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 40px; /* Adicionado padding para evitar corte do conteúdo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            color: #4a0a0a; /* Cor vinho escuro */
+            margin-bottom: 20px;
+            text-align: center; /* Centraliza o título */
+        }
+
+        form {
+            background-color: #ffffff;
+            border: 1px solid #dcdcdc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto; /* Centraliza o formulário horizontalmente */
+        }
+
+        form p {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #4a0a0a; /* Cor vinho escuro */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dcdcdc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #6d0d0d; /* Cor vinho média */
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #4a0a0a; /* Cor vinho escuro */
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #6d0d0d; /* Cor vinho média */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <h2>Login</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
+    </form>
+</body>
+</html>
