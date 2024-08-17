@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Project{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'static/css/base.css' %}">
+    
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'players' %}">Players</a></li>
+            <li><a href="{% url 'signup' %}">Signup</a></li>
+            <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
+        </ul>
+    </nav>
+    {% block  %}
+    {% endblock %}
+    
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

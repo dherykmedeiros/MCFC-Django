@@ -17,6 +17,22 @@
             justify-content: center;
             min-height: 100vh;
         }
+        header {
+            background-color: #800000; /* Vinho */
+            color: #fff;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
         h1 {
             color: #800000; /* Vinho */
             margin-bottom: 20px;
@@ -59,7 +75,16 @@
     </style>
 </head>
 <body>
-    <h1>Players List</h1>
+    <header>
+        <h1>Players List</h1>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'players' %}">Players</a>
+            <a href="{% url 'signup' %}">Sign Up</a>
+            <a href="{% url 'edit_profile' %}">Edit Profile</a>
+        </nav>
+    </header>
     
     <table>
         <thead>
@@ -78,7 +103,7 @@
                     <td>{{ player.first_name }} {{ player.last_name }}</td>
                     <td>{{ player.get_position_display }}</td>
                     <td>{{ player.date_born }}</td>
-                    <td>{{ player.idade }}</td>
+                    <td>{{ player.age }}</td>
                     <td>{{ player.get_dominant_leg_display }}</td>
                     <td>{{ player.specialty }}</td>
                 </tr>
@@ -87,7 +112,7 @@
     </table>
 
     <footer>
-        <p>&copy; 2024 Mercado Central Futebol Clube</p>
+        <p>&copy; 2024 Your Sports Team</p>
     </footer>
 </body>
 </html>

@@ -4,6 +4,8 @@ from .forms import PlayerSingUpForm, PlayerProfileForm
 from .models import Player
 from django.contrib.auth.decorators import login_required
 
+
+
 def players_list(request):
     players = Player.objects.all()
     return render(request,'players/players.html',{'players':players})

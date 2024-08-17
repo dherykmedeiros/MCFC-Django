@@ -10,11 +10,30 @@
             background-color: #f5f5f5;
             color: #333;
             margin: 0;
-            padding: 40px; /* Adicionado padding para evitar corte do conteúdo */
+            padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             min-height: 100vh;
+        }
+
+        header {
+            background-color: #800000; /* Cor vinho */
+            color: #ffffff;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin: 10px 0;
+        }
+
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         h2 {
@@ -31,7 +50,7 @@
             padding: 20px;
             max-width: 400px;
             width: 100%;
-            margin: 0 auto; /* Centraliza o formulário horizontalmente */
+            margin: 20px 0; /* Espaço entre o formulário e o menu */
         }
 
         form p {
@@ -75,14 +94,38 @@
         .error {
             color: #d9534f; /* Cor vinho clara para mensagens de erro */
         }
+
+        footer {
+            margin-top: auto;
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+            background-color: #800000; /* Cor vinho */
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Sign Up</h1>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'players' %}">Players</a>
+            <a href="{% url 'signup' %}">Sign Up</a>
+            <a href="{% url 'edit_profile' %}">Edit Profile</a>
+        </nav>
+    </header>
+    
     <form method="post">
         <h2>Sign Up</h2>
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Sign Up</button>
     </form>
+
+    <footer>
+        <p>&copy; 2024 Your Sports Team</p>
+    </footer>
 </body>
 </html>

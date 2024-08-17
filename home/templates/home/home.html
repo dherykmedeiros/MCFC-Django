@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #800000;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        footer {
+            background-color: #800000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Time de Futebol</h1>
+        <nav>
+            <a href="{% url 'home' %}">Início</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'players' %}">Jogadores</a>
+            <a href="{% url 'signup' %}">Cadastro</a>
+            <a href="{% url 'edit_profile' %}">Perfil</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Sobre o Time</h2>
+        <p>Bem-vindo à página inicial do nosso time de futebol. Aqui você pode gerenciar informações sobre os jogadores, acessar seu perfil e muito mais!</p>
+        <p>Fique atento às atualizações e notícias do time!</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Time de Futebol</p>
+    </footer>
+</body>
+</html>
